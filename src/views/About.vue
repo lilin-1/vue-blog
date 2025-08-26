@@ -209,54 +209,7 @@
         </div>
       </section>
 
-      <!-- 时间线 -->
-      <section class="mb-20">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            工作经历
-          </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-400">
-            我的职业发展历程
-          </p>
-        </div>
-        
-        <div class="max-w-3xl mx-auto">
-          <div class="relative">
-            <!-- 时间线 -->
-            <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gray-300 dark:bg-gray-600"></div>
-            
-            <!-- 时间线项目 -->
-            <div
-              v-for="(item, index) in timeline"
-              :key="index"
-              class="relative flex items-center mb-8"
-            >
-              <!-- 时间线点 -->
-              <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bg-primary-600 rounded-full border-2 border-white dark:border-gray-900"></div>
-              
-              <!-- 内容 -->
-              <div :class="['ml-12 md:ml-0', index % 2 === 0 ? 'md:mr-1/2 md:pr-8' : 'md:ml-1/2 md:pl-8']">
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-                  <div class="flex items-center justify-between mb-2">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                      {{ item.title }}
-                    </h3>
-                    <span class="text-sm text-gray-500 dark:text-gray-400">
-                      {{ item.period }}
-                    </span>
-                  </div>
-                  <p class="text-primary-600 dark:text-primary-400 font-medium mb-2">
-                    {{ item.company }}
-                  </p>
-                  <p class="text-gray-600 dark:text-gray-400">
-                    {{ item.description }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <!-- 联系我 -->
       <section class="text-center">
@@ -312,33 +265,7 @@ const skillCategories = computed(() => {
   return Object.values(categories).filter(category => category.skills.length > 0)
 })
 
-// 工作经历时间线
-const timeline = [
-  {
-    title: '高级前端开发工程师',
-    company: '某科技公司',
-    period: '2022 - 至今',
-    description: '负责公司核心产品的前端架构设计和开发，带领团队完成多个重要项目，推动技术栈升级和开发流程优化。'
-  },
-  {
-    title: '前端开发工程师',
-    company: '某互联网公司',
-    period: '2020 - 2022',
-    description: '参与多个Web应用的开发，熟练使用Vue.js和React框架，负责组件库的设计和维护。'
-  },
-  {
-    title: '初级前端开发工程师',
-    company: '某软件公司',
-    period: '2018 - 2020',
-    description: '开始前端开发职业生涯，学习现代前端技术栈，参与企业级应用的开发和维护。'
-  },
-  {
-    title: '计算机科学学士',
-    company: '某大学',
-    period: '2014 - 2018',
-    description: '学习计算机科学基础知识，掌握编程基础和软件工程原理，为后续职业发展奠定基础。'
-  }
-]
+
 
 // 方法
 const getSocialPlatformName = (platform: string): string => {
